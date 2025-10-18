@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Hoa vàng nở - Chúc mừng 20-10</title>
+<style>
+  body {
+    margin: 0;
+    background: radial-gradient(circle at center, #0a0a0a, #000);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  svg {
+    width: 400px;
+    height: 400px;
+  }
+
+  .petal {
+    fill: url(#yellowGradient);
+    transform-origin: 200px 200px;
+    opacity: 0;
+    animation: bloom 4s ease-out forwards;
+  }
+
+  @keyframes bloom {
+    0% {
+      opacity: 0;
+      transform: scale(0.1) rotate(var(--r)) translateY(0);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.25) rotate(var(--r)) translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(var(--r)) translateY(0);
+    }
+  }
+
+  circle.center {
+    fill: white;
+    filter: drop-shadow(0 0 20px #fff5cc);
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 5px #fff5cc); }
+    to { filter: drop-shadow(0 0 25px #ffffe0); }
+  }
+
+  .message {
+    color: #ffe066;
+    font-size: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: appear 2s ease-out 4s forwards;
+    text-shadow: 0 0 10px #ffec99;
+  }
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+
+<svg viewBox="0 0 400 400">
+  <defs>
+    <!-- Gradient vàng nhạt cho cánh hoa -->
+    <radialGradient id="yellowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff7b3"/>
+      <stop offset="60%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#ffcc33"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 12 cánh hoa vàng -->
+  <path class="petal" style="--r:0deg"   d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:30deg"  d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:60deg"  d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:90deg"  d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:120deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:150deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:180deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:210deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:240deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:270deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:300deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+  <path class="petal" style="--r:330deg" d="M200,200 C210,110 260,110 270,200 C260,210 210,210 200,200 Z"/>
+
+  <!-- Nhị hoa trắng -->
+  <circle class="center" cx="200" cy="200" r="15" />
+</svg>
+
+<div class="message">🌼 Chúc mừng 20-10 Hẻi En🌼</div>
+
+</body>
+</html>
